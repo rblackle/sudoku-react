@@ -9,6 +9,7 @@ export const DarkModeSelector = () => {
 
     return (
         <IconButton
+            size="sm"
             variant="outlined"
             onClick={() => {
                 if (mode === 'light') {
