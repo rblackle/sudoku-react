@@ -5,10 +5,11 @@ import CssBaseline from '@mui/joy/CssBaseline';
 import Typography from '@mui/joy/Typography';
 import theme from "./theme";
 import {DarkModeSelector} from "./components/DarkModeSelector";
-import {Sheet, Stack} from "@mui/joy";
 import { Header } from './components/Header';
 import {NavigationBar} from "./components/NavigationBar";
 import Box from "@mui/joy/Box";
+import Stack from "@mui/joy/Stack";
+import Sheet from "@mui/joy/Sheet";
 
 function App() {
     return (
