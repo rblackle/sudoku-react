@@ -10,12 +10,13 @@ import {NavigationBar} from "./components/NavigationBar";
 import Box from "@mui/joy/Box";
 import Stack from "@mui/joy/Stack";
 import Sheet from "@mui/joy/Sheet";
+import {SudokuGrid} from "./components/SudokuGrid";
 
 function App() {
     return (
         <CssVarsProvider disableTransitionOnChange theme={theme}>
             <CssBaseline />
-            <Stack minHeight="100vh">
+            <Stack height="100vh">
                 <Header>
                     <Typography component="h1" fontWeight="xl">
                         Sudoku
@@ -23,25 +24,25 @@ function App() {
                     <DarkModeSelector/>
                 </Header>
                 <Box
-                    sx={[
-                        {
-                            display: 'grid',
-                            gridTemplateColumns: {
-                                xs: '1fr',
-                                sm: 'minmax(64px, 200px) minmax(450px, 1fr)',
-                                md: 'minmax(160px, 300px) minmax(600px, 1fr) minmax(300px, 420px)',
-                            },
-                            gridTemplateRows: '1fr',
-                            minHeight: '100vh',
-                        },
-                    ]}
+                    height="100%"
+                    display="grid"
+                    gridTemplateColumns={{
+                        xs: '1fr',
+                        sm: 'minmax(64px, 200px) minmax(370px, 1fr)',
+                        md: 'minmax(160px, 300px) minmax(370px, 1fr) minmax(300px, 420px)',
+                    }}
+                    gridTemplateRows="1fr"
                 >
                     <NavigationBar>
                     </NavigationBar>
                     <Box
                         component="main"
-                        sx={[{ p: 2 }]}
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                        p={2}
                     >
+                        <SudokuGrid/>
                     </Box>
                     <Sheet
                         sx={{
