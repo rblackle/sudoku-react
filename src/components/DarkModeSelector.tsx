@@ -1,16 +1,15 @@
 import React from 'react';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
-import { useColorScheme } from '@mui/joy/styles/CssVarsProvider';
-import IconButton from "@mui/joy/IconButton";
+import { useColorScheme } from '@mui/material/styles/CssVarsProvider';
+import IconButton from "@mui/material/IconButton";
 
-export const DarkModeSelector = () => {
+export function DarkModeSelector() {
     const { mode, setMode } = useColorScheme();
 
     return (
         <IconButton
-            size="sm"
-            variant="outlined"
+            size="small"
             onClick={() => {
                 if (mode === 'light') {
                     setMode('dark');

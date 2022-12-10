@@ -1,5 +1,6 @@
-import Box from "@mui/joy/Box";
-import * as React from "react";
+import React from "react";
+
+import Box from "@mui/material/Box";
 
 interface HeaderProps {
     children: React.ReactNode,

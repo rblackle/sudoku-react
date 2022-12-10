@@ -1,7 +1,7 @@
 import React from "react";
 
 import {SudokuRegion} from "./SudokuRegion";
-import Box from "@mui/joy/Box";
+import Box from "@mui/material/Box";
 
 interface SudokuGridProps {
 
@@ -12,7 +12,7 @@ export const SudokuGrid = (props: SudokuGridProps) => {
         <Box display="block">
             <Box
                 display="grid"
-                gap="5px"
+                gap="8px"
                 justifyContent="center"
                 gridTemplateColumns={{
                     xs: 'repeat(3, auto)',

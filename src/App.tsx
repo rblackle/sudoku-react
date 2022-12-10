@@ -1,20 +1,20 @@
 import React from 'react';
-import { CssVarsProvider } from '@mui/joy/styles/CssVarsProvider';
 
-import CssBaseline from '@mui/joy/CssBaseline';
-import Typography from '@mui/joy/Typography';
+import CssBaseline from '@mui/material/CssBaseline';
+import Typography from '@mui/material/Typography';
 import theme from "./theme";
 import {DarkModeSelector} from "./components/DarkModeSelector";
 import { Header } from './components/Header';
 import {NavigationBar} from "./components/NavigationBar";
-import Box from "@mui/joy/Box";
-import Stack from "@mui/joy/Stack";
-import Sheet from "@mui/joy/Sheet";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Paper from "@mui/material/Paper";
 import {SudokuGrid} from "./components/SudokuGrid";
+import {Experimental_CssVarsProvider as CssVarsProvider} from "@mui/material/styles/CssVarsProvider";
 
 function App() {
     return (
-        <CssVarsProvider disableTransitionOnChange theme={theme}>
+        <CssVarsProvider theme={theme}>
             <CssBaseline />
             <Stack height="100vh">
                 <Header>
@@ -44,7 +44,7 @@ function App() {
                     >
                         <SudokuGrid/>
                     </Box>
-                    <Sheet
+                    <Paper
                         sx={{
                             display: { xs: 'none', sm: 'initial' },
                             borderLeft: '1px solid',
@@ -52,7 +52,7 @@ function App() {
                         }}
                     >
 
-                    </Sheet>
+                    </Paper>
                 </Box>
             </Stack>
         </CssVarsProvider>

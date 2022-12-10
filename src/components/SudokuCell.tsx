@@ -1,6 +1,6 @@
 import React from "react";
 
-import Input from "@mui/joy/Input";
+import OutlinedInput from "@mui/material/OutlinedInput";
 
 interface SudokuCellProps {
 
@@ -11,7 +11,14 @@ export const SudokuCell = (props: SudokuCellProps) => {
     //TODO: Better option than Input
     //TODO: EG Don't show cursor, maybe show it's always selecting the full input
     return (
-        <Input
+        <OutlinedInput
+            sx={{
+                "& .MuiOutlinedInput-input": {
+                    padding: 0,
+                    fontSize: "24px",
+                    textAlign: "center"
+                }
+            }}
             value={value}
             onKeyDown={(evt) => {
                 const value = evt.key;
