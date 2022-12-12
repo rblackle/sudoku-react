@@ -1,14 +1,15 @@
-import React from "react";
+import React, {SetStateAction} from "react";
 
 import OutlinedInput from "@mui/material/OutlinedInput";
+import {CellValue, RegionValue, validCellValues} from "src/utilities/IOUtils";
 
 interface SudokuCellProps {
-
+    value: CellValue,
+    onChange: (newValue: CellValue) => void,
 }
 
 export const SudokuCell = (props: SudokuCellProps) => {
-    const [value, setValue] = React.useState<string>("");
-    //TODO: Better option than Input
+    //TODO: Better option than Input for multi-select, etc
     //TODO: EG Don't show cursor, maybe show it's always selecting the full input
     return (
         <OutlinedInput
@@ -19,13 +20,16 @@ export const SudokuCell = (props: SudokuCellProps) => {
                     textAlign: "center"
                 }
             }}
-            value={value}
+            value={props.value ?? ""}
             onKeyDown={(evt) => {
-                const value = evt.key;
-                if (value <= '9' && value >= '0') {
-                    setValue(evt.key);
-                } else if (value === "Backspace" || value === "Delete") {
-                    setValue("");
+                if (evt.key === "Backspace" || evt.key === "Delete") {
+                    props.onChange(null);
+                } else {
+                    const numericValue = +evt.key;
+                    const validValue = validCellValues.find(validVal => validVal === numericValue);
+                    if (validValue) {
+                        props.onChange(validValue);
+                    }
                 }
             }}
         />
